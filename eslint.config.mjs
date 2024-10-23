@@ -50,7 +50,7 @@ export default [
           format: ["PascalCase"],
         }
       ],
-      "@typescript-eslint/explicit-member-accessibility": "warn",
+      //"@typescript-eslint/explicit-member-accessibility": "warn",
       "@typescript-eslint/member-ordering": ["warn", {
         classes: [
           "public-static-field",
