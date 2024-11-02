@@ -1,4 +1,5 @@
-class Animal {
+class Animal
+{
     name: string;
     species: string;
     foodType: string;
@@ -11,11 +12,5 @@ class Animal {
     }
 
     
-
-
-
-
-
-
 }
 
