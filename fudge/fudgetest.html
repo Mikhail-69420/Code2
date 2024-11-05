@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test_3d</title>
+
+    <script src="https://hs-furtwangen.github.io/FUDGE/Distribution/FudgeCore.js"></script>
+    <script>
+      window.addEventListener("load", start); // call start when load completed
+  
+      function start() {
+        let ƒ = FudgeCore;
+        let mesh = new ƒ.MeshCube("Cube"); // create a simple mesh representing a cube
+        let material = new ƒ.Material("Texture", FudgeCore.ShaderLitTextured); // create a material with the default texture for testing
+  
+        let node = new ƒ.Node(); // create a node as the scene graph
+        node.addComponent(new ƒ.ComponentMesh(mesh)); // refer the mesh to the node
+        node.addComponent(new ƒ.ComponentMaterial(material)); // refer the material to the node
+        
+        node.getComponent(ƒ.ComponentMesh).mtxPivot.rotate(new ƒ.Vector3(-30,30,-15)); // rotate the mesh
+  
+        let cmpCamera = new ƒ.ComponentCamera(); // setup a camera
+        cmpCamera.mtxPivot.translateZ(4); // move the camera back
+        cmpCamera.mtxPivot.rotateY(180)
+  
+        let viewport = new ƒ.Viewport(); // create a viewport to manage rendering of the graph to the canvas via the camera
+        viewport.initialize("Viewport", node, cmpCamera, document.querySelector("canvas"));
+  
+        viewport.draw(); // render
+      }
+    </script>
+
+</head>
+<body>
+    <canvas width="1200" height="700"></canvas>
+</body>
+</html>
