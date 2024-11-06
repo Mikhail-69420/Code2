@@ -51,8 +51,8 @@ namespace FirstFudge {
         const rSpeed: number = 360 / 1;
         const frameTimeInMilliSeconds: number = ƒ.Loop.timeFrameGame;
         const frameTimeInSeconds: number = (frameTimeInMilliSeconds / 1000);
-        //const degrees: number = 360 / frameTimeInSeconds;
-        //node.mtxLocal.rotateY(degrees);
+        const degrees: number = 360 / frameTimeInSeconds;
+        node.mtxLocal.rotateY(degrees);
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.W]))
             node.mtxLocal.translateZ(tSpeed * frameTimeInSeconds);
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.S]))

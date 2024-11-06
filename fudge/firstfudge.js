@@ -38,8 +38,8 @@ var FirstFudge;
         const rSpeed = 360 / 1;
         const frameTimeInMilliSeconds = ƒ.Loop.timeFrameGame;
         const frameTimeInSeconds = (frameTimeInMilliSeconds / 1000);
-        //const degrees: number = 360 / frameTimeInSeconds;
-        //node.mtxLocal.rotateY(degrees);
+        const degrees = 360 / frameTimeInSeconds;
+        node.mtxLocal.rotateY(degrees);
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.W]))
             node.mtxLocal.translateZ(tSpeed * frameTimeInSeconds);
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.S]))
